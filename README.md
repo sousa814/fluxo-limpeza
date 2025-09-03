@@ -26,7 +26,6 @@
             transform: translateY(-5px) scale(1.05);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             background-color: #0d9488 !important; /* teal-600 */
-            color: white;
             border-color: #0d9488;
         }
         .arrow-tip-right {
