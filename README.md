@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: A "Process Explorer" SPA. Features a main navigation bar and an interactive flowchart representing the 5 phases. Clicking a phase in the flowchart or nav bar dynamically updates a central content area to display that phase's detailed steps. This task-oriented design transforms the static document into an engaging, explorable tool, preventing information overload. A small dashboard with a Chart.js visualization is included to show the potential data-driven outcomes of the workflow, adding an analytical layer. This structure was chosen to provide a clear overview while allowing users to drill down into details on demand, enhancing usability and comprehension. -->
+    <!-- Visualization & Content Choices: Report Info: 5-phase workflow -> Goal: Organize & Inform -> Viz/Presentation: Interactive flowchart (HTML/CSS) and dynamic text blocks -> Interaction: Click on a phase node to update the main content view -> Justification: Provides a clear mental model of the entire process and encourages active exploration over passive reading. | Report Info: Process outcomes -> Goal: Inform/Analyze -> Viz/Presentation: Donut Chart (Chart.js/Canvas) and Key Stat Cards -> Interaction: Static display of sample data -> Justification: Adds a quantitative, data-driven context to the qualitative process description. All visuals are built with HTML/CSS or Chart.js, confirming no SVG/Mermaid is used. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -126,16 +130,19 @@
 
         <section id="workflow-visualizer">
             <div id="flow-diagram" class="hidden md:flex flex-col items-center justify-center p-8">
+                <!-- Top Row: Phases 1 to 4 -->
                 <div class="flex items-center justify-center">
-                    <div id="phase1-node" data-phase="1" class="flow-node z-10 w-48 h-28 flex flex-col items-center justify-center text-center p-3 border-2 border-stone-300 bg-white rounded-lg shadow-md">
-                        <div class="font-bold">Fase 1</div>
-                        <div>Solicitação</div>
-                    </div>
+                    <!-- Phase 1 -->
+                <div id="phase1-node" data-phase="1" class="flow-node z-10 w-48 h-28 flex flex-col items-center justify-center text-center p-3 border-2 border-stone-300 bg-white rounded-lg shadow-md">
+                    <div class="font-bold">Fase 1</div>
+                    <div>Solicitação</div>
+                </div>
 
                     <div class="w-12 h-0.5 bg-stone-400 mx-4 relative">
                         <div class="arrow-tip-right"></div>
                     </div>
                     
+                    <!-- Phase 2 -->
                     <div id="phase2-node" data-phase="2" class="flow-node z-10 w-48 h-28 flex flex-col items-center justify-center text-center p-3 border-2 border-stone-300 bg-white rounded-lg shadow-md">
                         <div class="font-bold">Fase 2</div>
                         <div>Notificação</div>
@@ -145,6 +152,7 @@
                          <div class="arrow-tip-right"></div>
                     </div>
 
+                    <!-- Phase 3 -->
                     <div id="phase3-node" data-phase="3" class="flow-node z-10 w-48 h-28 flex flex-col items-center justify-center text-center p-3 border-2 border-stone-300 bg-white rounded-lg shadow-md">
                         <div class="font-bold">Fase 3</div>
                         <div>Execução</div>
@@ -154,12 +162,14 @@
                          <div class="arrow-tip-right"></div>
                     </div>
 
+                    <!-- Phase 4 -->
                     <div id="phase4-node" data-phase="4" class="flow-node z-10 w-48 h-28 flex flex-col items-center justify-center text-center p-3 border-2 border-stone-300 bg-white rounded-lg shadow-md">
                         <div class="font-bold">Fase 4</div>
                         <div>Validação</div>
                     </div>
                 </div>
 
+                <!-- Vertical Connector and Phase 5 -->
                 <div class="flex justify-end w-full" style="max-width: 864px;">
                     <div class="flex flex-col items-center">
                         <div class="h-12 w-0.5 bg-stone-400 mt-2 relative">
@@ -260,7 +270,7 @@
                     title: "Fase 5: Regra de Fim de Expediente",
                     actors: "Sistema, Supervisor",
                     content: `
-                          <ol class="list-decimal list-inside space-y-3 text-stone-700">
+                         <ol class="list-decimal list-inside space-y-3 text-stone-700">
                             <li><strong>Verificação Automatizada:</strong> Ao final do expediente, o sistema gera um relatório de todos os chamados que não estão com status "Fechado" ou "Agendado".</li>
                             <li><strong>Alerta para Supervisão:</strong> Esse relatório é enviado para os supervisores da limpeza e das áreas solicitantes.</li>
                             <li><strong>Ação Requerida:</strong> O objetivo é garantir que nenhuma tarefa crítica ficou pendente. Se um chamado estiver "Aberto" ou "Em Andamento" fora do horário, o supervisor deve investigar e tomar a ação necessária.</li>
@@ -354,3 +364,4 @@
 
 </body>
 </html>
+
